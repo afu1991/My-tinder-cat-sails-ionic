@@ -1,0 +1,50 @@
+<ion-view cache-view="false" view-title="{{ pageTitle }}">
+    <ion-content cache-view="false">
+        <ion-list show-delete="shouldShowDelete"
+                  show-reorder="shouldShowReorder"
+                  can-swipe="listCanSwipe">
+            <div class="input-field padding">
+                <input placeholder="Recherche utilisateur" id="search" type="search" ng-model="query">
+            </div>
+            <div flash-message="5000">
+                
+            </div>
+
+            
+            <ion-item ng-repeat="item in items | filter:query" ng-if="item.username != 'admin'"
+                      class="item-thumbnail-left">
+                <img ng-src="{{item.image}}">
+                <h2><a ui-sref="home.show({id: item.id})">{{ item.lastname }} {{ item.firstname }} </a></h2>
+                    <p>{{ item.age }} ans</p>
+                    <p>{{ item.sexe }}</p>
+                    <p>{{ item.description }}</p>
+
+                    <ion-option-button class="button-positive"
+                                       ui-sref="home.show({id: item.id})">
+                        Détails
+                    </ion-option-button>
+                    <ion-option-button class="button-info"
+                                       ng-click="edit(item)">
+                        Edit
+                    </ion-option-button>
+                    <ion-delete-button class="ion-minus-circled"
+                                       ng-click="deleteCards($index)">
+                    </ion-delete-button>
+                    <ion-reorder-button class="ion-navicon"
+                                        on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-light">
+        <div class="buttons">
+            <button class="button button-assertive" ui-sref="home.add">Ajouter</button>
+        </div>
+        <h1 class="title"> </h1>
+        <div style="margin-left:184px;">
+            <ion-toggle ng-model="shouldShowDelete" class="toggle-assertive" style="border:none; padding-right: 110px">
+
+            </ion-toggle>
+        </div>
+    </ion-footer-bar>
+</ion-view>

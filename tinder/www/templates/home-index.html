@@ -1,0 +1,40 @@
+<ion-view cache-view="false" view-title="Tinder" >
+    <ion-content cache-view="false" class="padding content-home" scroll="false" >
+        <ion-side-menus class="content-home">
+            <div flash-message="10000">
+               
+            </div>
+
+            <div>
+                <td-cards>
+                    <td-card id="td-card" ng-repeat="card in cards" ng-if="number != card.id" on-destroy="cardDestroyed($index)"
+                             on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+                             on-partial-swipe="cardPartialSwipe(amt)">
+                             
+                        <div class="title">
+                            <a>
+                                {{ card.lastname }}  <b>{{ card.age }} ans</b>  {{ card.description }} 
+                            </a>
+                            </button>
+                        </div>
+                        <div class="image">
+                            <div class="no-text overlayBox"><div class="noBox boxed">NOPE</div></div>
+                            <img ng-src="{{card.image}}">
+                            <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">LIKE</div></div>
+                            <input type="hidden" ng-model="hidden" value="{{ card.id }}">
+                        </div>
+                    </td-card>
+                </td-cards>
+            </div>
+
+            <div class="block-btn-like-dislike">
+                <button class="button button-assertive ion-close-round btn-like-dislike" ng-click="" style="display: inline-block;" ></button>
+
+                <button class="button ion-ios-heart button-balanced btn-like-dislike" ng-click="" style="display: inline-block; margin-left: 40px;"></button>
+            </div>
+       </ion-side-menus>
+    </ion-content>
+</ion-view>
+
+
+

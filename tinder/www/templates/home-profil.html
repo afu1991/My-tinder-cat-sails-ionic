@@ -1,0 +1,25 @@
+<ion-view view-title="Mon profile"  cache-view="false">
+
+    <ion-content cache-view="false">
+     <div id="profile-bg"></div>
+     <div flash-message="5000"></div>
+      <div id="content">
+        <div id="profile-info">
+          <img id="profile-image" src="{{items[0].image}}">
+          <h3 id="profile-name">{{items[0].lastname}} {{items[0].firstname}}</h3>
+          <span id="profile-description">{{items[0].age}} ans
+            </span>
+            <a href="#">{{items[0].sexe}} </a>
+               <button style="position:relative;bottom:5px;" ui-sref="home.profilEdit" class="button button-small button-stable">
+                Modifier
+              </button>
+   <button style="position:relative;bottom:5px;" ui-sref="home.profilEditPictures" class="button button-small button-stable">
+                Modifier photos
+              </button>
+        </div>
+        </div>
+      
+     <!-- <h3 id="profile-name">Changer photo</h3> -->
+
+    </ion-content>
+</ion-view>

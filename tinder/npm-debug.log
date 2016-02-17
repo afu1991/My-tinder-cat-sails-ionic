@@ -1,0 +1,115 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'ios-sim' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of /home/liu/myTinder/tinder/package.json
+5 warn package.json tinder@1.0.0 No repository field.
+6 warn package.json tinder@1.0.0 No README data
+7 warn package.json tinder@1.0.0 No license field.
+8 verbose installManyTop reading scoped package data from /home/liu/myTinder/tinder/node_modules/sails-mongo/package.json
+9 verbose readDependencies loading dependencies from /home/liu/myTinder/tinder/package.json
+10 silly cache add args [ 'ios-sim', null ]
+11 verbose cache add spec ios-sim
+12 silly cache add parsed spec { raw: 'ios-sim',
+12 silly cache add   scope: null,
+12 silly cache add   name: 'ios-sim',
+12 silly cache add   rawSpec: '',
+12 silly cache add   spec: '*',
+12 silly cache add   type: 'range' }
+13 silly addNamed ios-sim@*
+14 verbose addNamed "*" is a valid semver range for ios-sim
+15 silly addNameRange { name: 'ios-sim', range: '*', hasData: false }
+16 silly mapToRegistry name ios-sim
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry uri https://registry.npmjs.org/ios-sim
+20 verbose addNameRange registry:https://registry.npmjs.org/ios-sim not in flight; fetching
+21 verbose get https://registry.npmjs.org/ios-sim not expired, no request
+22 silly addNameRange number 2 { name: 'ios-sim', range: '*', hasData: true }
+23 silly addNameRange versions [ 'ios-sim',
+23 silly addNameRange   [ '1.8.0',
+23 silly addNameRange     '1.8.1',
+23 silly addNameRange     '1.8.2',
+23 silly addNameRange     '1.9.0',
+23 silly addNameRange     '2.0.0',
+23 silly addNameRange     '2.0.1',
+23 silly addNameRange     '3.0.0',
+23 silly addNameRange     '3.1.0',
+23 silly addNameRange     '3.1.1',
+23 silly addNameRange     '4.1.0',
+23 silly addNameRange     '4.1.1',
+23 silly addNameRange     '3.2.0',
+23 silly addNameRange     '5.0.0',
+23 silly addNameRange     '5.0.1',
+23 silly addNameRange     '5.0.2',
+23 silly addNameRange     '5.0.3' ] ]
+24 silly addNamed ios-sim@5.0.3
+25 verbose addNamed "5.0.3" is a plain semver version for ios-sim
+26 silly cache afterAdd ios-sim@5.0.3
+27 verbose afterAdd /home/liu/.npm/ios-sim/5.0.3/package/package.json not in flight; writing
+28 verbose afterAdd /home/liu/.npm/ios-sim/5.0.3/package/package.json written
+29 silly install resolved [ { name: 'ios-sim',
+29 silly install resolved     version: '5.0.3',
+29 silly install resolved     os: [ 'darwin' ],
+29 silly install resolved     preferGlobal: 'true',
+29 silly install resolved     description: 'launch iOS apps into the iOS Simulator from the command line (Xcode 6.0+)',
+29 silly install resolved     main: 'ios-sim.js',
+29 silly install resolved     repository:
+29 silly install resolved      { type: 'git',
+29 silly install resolved        url: 'git+https://github.com/phonegap/ios-sim.git' },
+29 silly install resolved     engines: { node: '>=0.10.0' },
+29 silly install resolved     keywords: [ 'ios-sim', 'iOS Simulator' ],
+29 silly install resolved     bin: { 'ios-sim': './bin/ios-sim' },
+29 silly install resolved     bugs: { url: 'https://github.com/phonegap/ios-sim/issues' },
+29 silly install resolved     author: { name: 'Shazron Abdullah' },
+29 silly install resolved     license: 'MIT',
+29 silly install resolved     dependencies: { simctl: '^0.0.6', nopt: '1.0.9', 'bplist-parser': '^0.0.6' },
+29 silly install resolved     gitHead: 'd0dd865bd9b35b0d324ab37dc93126735a309ffb',
+29 silly install resolved     homepage: 'https://github.com/phonegap/ios-sim#readme',
+29 silly install resolved     _id: 'ios-sim@5.0.3',
+29 silly install resolved     scripts: {},
+29 silly install resolved     _shasum: '152c724258f22e13cbfa9b67d55a5300e9920af1',
+29 silly install resolved     _from: 'ios-sim@*',
+29 silly install resolved     _npmVersion: '2.11.3',
+29 silly install resolved     _nodeVersion: '0.12.7',
+29 silly install resolved     _npmUser: { name: 'shazron', email: 'shazron@gmail.com' },
+29 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+29 silly install resolved     dist:
+29 silly install resolved      { shasum: '152c724258f22e13cbfa9b67d55a5300e9920af1',
+29 silly install resolved        tarball: 'http://registry.npmjs.org/ios-sim/-/ios-sim-5.0.3.tgz' },
+29 silly install resolved     directories: {},
+29 silly install resolved     _resolved: 'https://registry.npmjs.org/ios-sim/-/ios-sim-5.0.3.tgz',
+29 silly install resolved     readme: 'ERROR: No README data found!' } ]
+30 info install ios-sim@5.0.3 into /home/liu/myTinder/tinder
+31 info installOne ios-sim@5.0.3
+32 verbose installOne of ios-sim to /home/liu/myTinder/tinder not in flight; installing
+33 verbose lock using /home/liu/.npm/_locks/ios-sim-acd61833a26e996e.lock for /home/liu/myTinder/tinder/node_modules/ios-sim
+34 verbose unlock done using /home/liu/.npm/_locks/ios-sim-acd61833a26e996e.lock for /home/liu/myTinder/tinder/node_modules/ios-sim
+35 verbose stack Error: Unsupported
+35 verbose stack     at checkPlatform (/usr/local/lib/node_modules/npm/node_modules/npm-install-checks/index.js:47:14)
+35 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+35 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+35 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:18:7
+35 verbose stack     at checkEngine (/usr/local/lib/node_modules/npm/node_modules/npm-install-checks/index.js:26:10)
+35 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+35 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+35 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+35 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1037:5
+35 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+36 verbose pkgid ios-sim@5.0.3
+37 verbose cwd /home/liu/myTinder/tinder
+38 error Linux 3.19.0-28-generic
+39 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "ios-sim"
+40 error node v0.12.7
+41 error npm  v2.11.3
+42 error code EBADPLATFORM
+43 error notsup Unsupported
+43 error notsup Not compatible with your operating system or architecture: ios-sim@5.0.3
+43 error notsup Valid OS:    darwin
+43 error notsup Valid Arch:  any
+43 error notsup Actual OS:   linux
+43 error notsup Actual Arch: x64
+44 verbose exit [ 1, true ]

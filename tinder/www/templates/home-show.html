@@ -1,0 +1,22 @@
+<ion-view cache-view="false" view-title="{{ pageTitle }}">
+    <ion-content>
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img src="{{ items.image }}">
+                <h2>{{ items.firstname }}  {{ items.lastname }}</h2>
+                <p>{{ items.age }} ans</p>
+            </div>
+
+            <div class="item item-body">
+                <img class="full-image" src="{{ items.image }}">
+                <p>
+                    {{ items.description }}
+                </p>
+
+            </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view view-title="Photos au choix"  cache-view="false">
+
+    <ion-content cache-view="false" class="padding">
+    <div ng-repeat="image in images">
+      <img id="profile-image" src="{{ image.path }}">
+               <button style="position:relative;top:5px;left:150px" ng-click="update($index)" class="button button-small button-stable">
+                Modifier
+              </button>
+      </div>
+     <!-- <h3 id="profile-name">Changer photo</h3> -->
+
+    </ion-content>
+</ion-view>
