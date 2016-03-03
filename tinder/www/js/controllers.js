@@ -22,28 +22,23 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
             return input;
         };
     })
-  
+
     .controller('CatprofilCtrl', function($scope, $sessionStorage, Profils, Auth, Cards, $state) {
         $scope.cards = [];
         $scope.numbers = [];
         Auth.me($sessionStorage.token).success(function(datas){
-                $scope.likedlists = datas[0].liked;
-                Profils.all().success(function(datase){
-                     angular.forEach($scope.likedlists, function(values, key) {
-                   
-                     $scope.numbers.push(angular.extend({}, values));  
-                     //console.log($scope.numbers);                         
-                     });      
-                });
-
+            $scope.likedlists = datas[0].liked;
+            Profils.all().success(function(datase){
+                 angular.forEach($scope.likedlists, function(values, key) {
+                 $scope.numbers.push(angular.extend({}, values));
+                 //console.log($scope.numbers);
+                 });
+            });
         }).error(function(datas){
             console.log(datas);
         });
         Auth.isLogged().success(function(datas){
-         //   console.log(datas);
             $scope.profils = datas;
-           // $state.go("home.index");
-
         }).error(function(datas){
             console.log('erreur cat profil')
             $state.go('connexion', {}, {reload: true, inherit: false});
@@ -55,7 +50,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
                 $scope.cards.push(angular.extend({}, newCard));
             }
             for(var i = 0; i < datas.length; i++) $scope.addCard();
-          
+
         }).error(function(){
             console.log('error')
         });
@@ -64,12 +59,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
             var auth_id = $scope.profils.id;
             var user_id = $scope.cards[index].id;
             Cards.dislike(auth_id, user_id).success(function(data){
-    
+
 
             }).error(function(data){
                 console.log('error');
             });
-         
+
         }
         $scope.cardSwipedRight = function(index) {
             var auth_id = $scope.profils.id;
@@ -84,12 +79,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
             $scope.cards.splice(index, 1);
         }
         $scope.checkCards = function(index) {
-          
+
         }
     })
     .controller('UserProfilCtrl', function($scope, $state, $stateParams, Profils) {
         /* Recuperer id du route */
-        var show_id = $stateParams.id; 
+        var show_id = $stateParams.id;
         Profils.getDetailAll(show_id).success(function(datas){
             $scope.items = datas;
         });
@@ -98,12 +93,12 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
     .controller('loginCtrl',function($scope, Logins, $timeout, $ionicLoading, $sessionStorage, $location, $state, $window, Auth, Flash) {
             Auth.isLogged().success(function(datas){
                 $scope.profils = datas;
-                //$state.go("home.index");
+                $state.go("home.index");
             }).error(function(data){
 
             });
-          
-        $scope.login = function(username, password) {  
+
+        $scope.login = function(username, password) {
             Logins.login(username, password).success(function(datas){
                 $ionicLoading.show({
                     content: 'Loading',
@@ -128,7 +123,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
         };
     })
     .controller('HomeCtrl',function($scope, $ionicPopup, $timeout, $ionicLoading, $state, $sessionStorage, Auth, $http) {
-         Auth.isLogged().success(function(datas){ 
+         Auth.isLogged().success(function(datas){
                 if (datas.username == 'admin') {
                     $scope.isAdmin = function() {
                         return true;
@@ -289,19 +284,19 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
     })
     .controller('subscribeCtrl',function($scope, Users, Flash, $state) {
         $scope.datas = {};
-      
+
         $scope.subscribe = function() {
             this.datas.token ="" ;
             this.datas.image = "http://thecatapi.com/api/images/get?format=src&type=gif";
             Users.subscribe(this.datas).success(function(datas){
-     
+
                 var message = '<strong>Votre compte a été crée avec succes !</strong>';
                 Flash.create('success', message);
                 $state.go("connexion");
             }).error(function (datas) {
                 var errorsMessage = "Veuillez bien remplir tout les champs";
                 Materialize.toast(errorsMessage, 3000)
-  
+
             })
 
         }
@@ -313,7 +308,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
        $scope.listCanSwipe = true;
        $scope.items = [];
         Profils.all().success(function(datas){
-           console.log(datas)   
+           console.log(datas)
            $scope.items = datas;
         }).error(function(){
             console.log('error')
@@ -322,7 +317,7 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
             Users.deleteOneUser($scope.items[$index].id).success(function(datas){});
             $scope.items.splice($index, 1);
         }
-        
+
         $scope.addUser = function() {
             console.log(this.datas);
             this.datas.token ="" ;
@@ -330,14 +325,14 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
            // http://thecatapi.com/api/images/get?format=src&type=gif
             this.datas.image = "http://24.media.tumblr.com/tumblr_lzyx71zOyn1qafc06o1_500.jpg";
             Users.subscribe(this.datas).success(function(datas){
-     
+
                 var message = '<strong>Votre compte a été crée avec succes !</strong>';
                 Flash.create('success', message);
                 $state.go("home.admin");
             }).error(function (datas) {
                 var errorsMessage = "Veuillez bien remplir tout les champs";
                 Materialize.toast(errorsMessage, 3000)
-  
+
             })
 
         }
@@ -375,10 +370,10 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
     })
     .controller('ProfilEditPicturesCtrl',function($scope, Users, Flash, Profils, $state, Auth, $sessionStorage) {
         $scope.images = [];
-        
+
         Auth.me($sessionStorage.token).success(function(data){
             $scope.items = data;
-    
+
         });
         for (var i = 1; i <= 9; i++) {
            $scope.images.push(angular.extend({},{path : "../img/chat/chat"+i+".jpg"}));
@@ -393,7 +388,3 @@ angular.module('starter.controllers', ['ionic', 'ionic.contrib.ui.tinderCards','
         }
 
     });
-
-       
-
-       

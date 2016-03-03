@@ -125,7 +125,7 @@ angular.module('starter.services', ['ngStorage'])
             params: {id_auth : id_auth}
           });
         }
-        
+
       }
       return result;
     })
@@ -145,14 +145,14 @@ angular.module('starter.services', ['ngStorage'])
     })
     .factory('Auth', function($http, $rootScope, $sessionStorage){
       var result = {
-        // isLogged : function()
-        // {
-        //   return $http({
-        //     url: $rootScope.api+"/isLogged",
-        //     method: "POST",
-        //     params: {token: $sessionStorage.token}
-        //   });
-        // },
+        isLogged : function()
+        {
+           return $http({
+             url: $rootScope.api+"/isLogged",
+            method: "POST",
+             params: {token: $sessionStorage.token}
+           });
+        },
         me : function(token)
         {
           return $http({
@@ -180,4 +180,3 @@ angular.module('starter.services', ['ngStorage'])
       }
       return result;
     });
-
